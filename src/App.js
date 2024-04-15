@@ -41,7 +41,7 @@ function App() {
             </ul>
           </nav>
           <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" exact element={<Home data={propsData} />} />
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
           </Routes>
