@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../utils/gateway";
 import Loading from "./Loading";
 
-function Contacts() {
+function Contacts({ dispatch }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -17,6 +17,13 @@ function Contacts() {
     return <Loading />;
   }
 
-  return <div>Date is {data.date}</div>;
+  return (
+    <>
+      <div>Date is {data.date}</div>;
+      <button onClick={() => dispatch({ childData: data.date })}>
+        send data to parent
+      </button>
+    </>
+  );
 }
 export default Contacts;
